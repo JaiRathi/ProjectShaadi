@@ -17,6 +17,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import com.shaadi.Utility.MarshMallowPermission;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.PerformsTouchActions;
@@ -112,6 +114,7 @@ public class TestBase extends AppAttributes {
 		try {
 			setConfig(file);
 			driver = initDriver();
+			MarshMallowPermission.grantPermission(driver, AppAttributes.UDID);
 		} catch (Exception e) {
 			System.out.println("Getting error while setting environment :: " + e);
 		}
