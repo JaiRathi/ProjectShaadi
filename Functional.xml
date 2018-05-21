@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional Test Suite">
+
+<!-- If add more test cases In this suite, You need to add them as bellow. -->
+
+<test name="TestSuite">
+    <classes>
+        <class name="com.shaadi.Test.TestSuite" ></class>   
+    </classes>
+</test>
+</suite>
