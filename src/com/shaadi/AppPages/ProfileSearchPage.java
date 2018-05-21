@@ -36,13 +36,13 @@ public class ProfileSearchPage extends TestBase {
 	 * 
 	 */
 	public void testSearchPage() throws Exception {
-		try {
 			WebElement gotITBtn = driver.findElement(By.xpath(OR.recommendedPageBtn()));
-			if(gotITBtn.isDisplayed()){
+			try {
+			if (gotITBtn.isDisplayed()) {
 				gotITBtn.click();
 				gotITBtn.click();
 				searchBtnPage();
-			}else {
+			} else {
 				skipPage();
 			}
 		} catch (NoSuchElementException e) {
@@ -50,7 +50,7 @@ public class ProfileSearchPage extends TestBase {
 			Screenshot.takeScreenShot(System.getProperty("user.dir") + "//Screenshots//Failure//", "testSearchPage");
 		}
 	}
-	
+
 	/**
 	 * @throws Exception
 	 *             This Method used to skip the premium plans if comes
@@ -58,18 +58,18 @@ public class ProfileSearchPage extends TestBase {
 	 */
 	public void skipPage() throws Exception {
 		try {
-		WebElement skipBtn = driver.findElement(By.xpath(OR.skipPremiumPage()));
-		if (skipBtn.isDisplayed()) {
-			skipBtn.click();
-			searchBtnPage();
-		} else {
-			System.out.println("No element found to move search page");
-		}
+			WebElement skipBtn = driver.findElement(By.xpath(OR.skipPremiumPage()));
+			if (skipBtn.isDisplayed()) {
+				skipBtn.click();
+				searchBtnPage();
+			} else {
+				System.out.println("No element found to move search page");
+			}
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 			Screenshot.takeScreenShot(System.getProperty("user.dir") + "//Screenshots//Failure//", "testSearchPage");
 		}
-	
+
 	}
 
 	/**
@@ -113,13 +113,14 @@ public class ProfileSearchPage extends TestBase {
 			scrollToBottom(searchPage);
 			driver.findElement(By.id(OR.selectMaritalStatus())).click();
 			driver.findElement(By.id(OR.cancelSelectedText())).click();
-			WebElement ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "Never Married");
+			WebElement ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "Never Married");
 			ele.click();
 			WebElement clickApplyBtn = driver.findElement(By.id(OR.clickApplyBtn()));
 			clickApplyBtn.click();
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
-			Screenshot.takeScreenShot(System.getProperty("user.dir") + "//Screenshots//Failure//", "selectMaritalStatus");
+			Screenshot.takeScreenShot(System.getProperty("user.dir") + "//Screenshots//Failure//",
+					"selectMaritalStatus");
 
 		}
 	}
@@ -134,7 +135,7 @@ public class ProfileSearchPage extends TestBase {
 			scrollToBottom(searchPage);
 			driver.findElement(By.id(OR.clickReligion())).click();
 			driver.findElement(By.id(OR.cancelSelectedText())).click();
-			WebElement ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "Hindu");
+			WebElement ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "Hindu");
 			ele.click();
 			driver.findElement(By.id(OR.clickApplyBtn())).click();
 		} catch (NoSuchElementException e) {
@@ -154,7 +155,7 @@ public class ProfileSearchPage extends TestBase {
 			scrollToBottom(searchPage);
 			driver.findElement(By.id(OR.clickMotherTngue())).click();
 			driver.findElement(By.id(OR.cancelSelectedText())).click();
-			WebElement ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "Hindi");
+			WebElement ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "Hindi");
 			ele.click();
 			driver.findElement(By.id(OR.clickApplyBtn())).click();
 		} catch (NoSuchElementException e) {
@@ -172,9 +173,9 @@ public class ProfileSearchPage extends TestBase {
 	public void selectCommunity() throws Exception {
 		try {
 			driver.findElement(By.id(OR.clickCommunity())).click();
-			WebElement ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "96K Kokanastha");
+			WebElement ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "96K Kokanastha");
 			ele.click();
-			ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "Agri");
+			ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "Agri");
 			ele.click();
 			driver.findElement(By.id(OR.clickApplyBtn())).click();
 		} catch (NoSuchElementException e) {
@@ -193,9 +194,9 @@ public class ProfileSearchPage extends TestBase {
 		try {
 			driver.findElement(By.id(OR.clickCountry())).click();
 			driver.findElement(By.id(OR.cancelSelectedText())).click();
-			WebElement ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "India");
+			WebElement ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "India");
 			ele.click();
-			ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "USA");
+			ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "USA");
 			ele.click();
 			driver.findElement(By.id(OR.clickApplyBtn())).click();
 		} catch (NoSuchElementException e) {
@@ -215,9 +216,9 @@ public class ProfileSearchPage extends TestBase {
 		try {
 			driver.findElement(By.id(OR.clickState())).click();
 			driver.findElement(By.id(OR.cancelSelectedText())).click();
-			WebElement ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "Andhra Pradesh");
+			WebElement ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "Andhra Pradesh");
 			ele.click();
-			ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "Maharashtra");
+			ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "Maharashtra");
 			ele.click();
 			driver.findElement(By.id(OR.clickApplyBtn())).click();
 		} catch (NoSuchElementException e) {
@@ -237,9 +238,9 @@ public class ProfileSearchPage extends TestBase {
 			scrollToBottom(searchPage);
 			driver.findElement(By.id(OR.clickCity())).click();
 			driver.findElement(By.id(OR.cancelSelectedText())).click();
-			WebElement ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "Mumbai");
+			WebElement ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "Mumbai");
 			ele.click();
-			ele = scrollToExactElement("com.shaadi.android:id/multi_chip_list", "Pune");
+			ele = scrollToExactElement(OR.scrollOnMothrTngPage(), "Pune");
 			ele.click();
 			driver.findElement(By.id(OR.clickApplyBtn())).click();
 		} catch (NoSuchElementException e) {

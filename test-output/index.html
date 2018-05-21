@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Functional_Test_Suite">
-              <span class="suite-name border-passed">Functional Test Suite</span>
+              <span class="suite-name border-failed">Functional Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Functional_Test_Suite" class="hide-methods failed suite-Functional_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-Functional_Test_Suite -->
+                      <a href="#" panel-name="suite-Functional_Test_Suite" class="show-methods failed suite-Functional_Test_Suite"> (show)</a> <!-- show-methods failed suite-Functional_Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Functional_Test_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Functional_Test_Suite" title="com.shaadi.Test.TestSuite" hash-for-method="verifySearchPage">verifySearchPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Functional_Test_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,11 +117,6 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Functional_Test_Suite" title="com.shaadi.Test.TestSuite" hash-for-method="verifyLoginPage">verifyLoginPage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Functional_Test_Suite" title="com.shaadi.Test.TestSuite" hash-for-method="verifySearchPage">verifySearchPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Functional_Test_Suite -->
@@ -122,6 +131,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Functional_Test_Suite" class="panel Functional_Test_Suite">
+          <div class="suite-Functional_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.shaadi.Test.TestSuite</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySearchPage">
+                  </a> <!-- verifySearchPage -->
+                  <span class="method-name">verifySearchPage</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T15:15:08.936Z&apos;
+System info: host: &apos;JaivirMacBook-Pro.local&apos;, ip: &apos;2402:3a80:9c7:2fb7:414a:c965:377b:b34d&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: /Users/jaivir.singh/eclipse..., appActivity: com.shaadi.android.ui.main...., appPackage: com.shaadi.android, databaseEnabled: false, desired: {app: /Users/jaivir.singh/eclipse..., appActivity: com.shaadi.android.ui.main...., appPackage: com.shaadi.android, deviceName: Moto, fullReset: true, platformName: Android, platformVersion: 6.0.0, udid: emulator-5554}, deviceManufacturer: unknown, deviceModel: Android SDK built for x86, deviceName: emulator-5554, deviceScreenSize: 720x1280, deviceUDID: emulator-5554, fullReset: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, platform: LINUX, platformName: LINUX, platformVersion: 6.0, takesScreenshot: true, udid: emulator-5554, warnings: {}, webStorageEnabled: false}
+Session ID: dac7cce0-c9b3-45c1-91a7-b310b2735fb7
+*** Element info: {Using=xpath, value=//*[contains(@text,&quot;GOT IT&quot;)]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:89)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:140)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at com.shaadi.AppPages.ProfileSearchPage.testSearchPage(ProfileSearchPage.java:39)
+	at com.shaadi.Test.TestSuite.verifySearchPage(TestSuite.java:31)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Functional_Test_Suite-class-failed -->
           <div class="suite-Functional_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -135,13 +196,6 @@
                   <span class="method-name">verifyLoginPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifySearchPage">
-                  </a> <!-- verifySearchPage -->
-                  <span class="method-name">verifySearchPage</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Functional_Test_Suite-class-passed -->
         </div> <!-- panel Functional_Test_Suite -->
@@ -153,7 +207,7 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Functional Test Suite&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Functional Test Suite&quot;&gt;
   &lt;test name=&quot;TestSuite&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.shaadi.Test.TestSuite&quot;/&gt;
@@ -200,16 +254,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifySearchPage')
 data.setCell(0, 2, 'com.shaadi.Test.TestSuite')
-data.setCell(0, 3, 94901);
+data.setCell(0, 3, 30494);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verifyLoginPage')
 data.setCell(1, 2, 'com.shaadi.Test.TestSuite')
-data.setCell(1, 3, 14119);
+data.setCell(1, 3, 13949);
 window.suiteTableData['Functional_Test_Suite']= { tableData: data, tableDiv: 'times-div-Functional_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 44 seconds</span>
               <div id="times-div-Functional_Test_Suite">
               </div> <!-- times-div-Functional_Test_Suite -->
             </div> <!-- times-div -->
@@ -242,15 +296,17 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginPage</span>
-                <span class="method-start">27457 ms</span>
+                <span class="method-start">29121 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verifySearchPage</span>
-                <span class="method-start">41578 ms</span>
+                <span class="method-start">43073 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">stopAppium</span>
-                <span class="method-start">141496 ms</span>
+                <span class="method-start">78601 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
